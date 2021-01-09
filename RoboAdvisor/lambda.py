@@ -27,6 +27,7 @@ def build_validation_result(is_valid, violated_slot, message_content):
         "message": {"contentType": "PlainText", "content": message_content},
     }
 
+
 ### Dialog Actions Helper Functions ###
 def get_slots(intent_request):
     """
@@ -91,13 +92,13 @@ def validate_data(age, investment_amount, intent_request):
             return build_validation_result(
                 False,
                 "age",
-                "please provide a different date of birth.",
+                "Please provide a different date of birth.",
                 )
         elif age > 65:
             return build_validation_result(
                 False,
                 "age",
-                "please provide a different date of birth.",
+                "Please provide a different date of birth.",
                 )
     if investment_amount is not None:
         investment_amount = parse_int(
@@ -107,8 +108,7 @@ def validate_data(age, investment_amount, intent_request):
             return build_validation_result(
                 False,
                 "usdAmount",
-                "The amount to convert should be greater than zero, "
-                "please provide a correct amount in USD to convert.",
+                "Please provide a correct amount in USD to convert.",
             )
 
  
